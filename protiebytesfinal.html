@@ -2,12 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Protiebytes | Healthy Protein Bars</title>
   <style>
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
-    header { background: #6B3E26; color: white; padding: 1em 2em; display: flex; justify-content: space-between; align-items: center; }
-    nav a { color: white; margin: 0 1em; text-decoration: none; font-weight: bold; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+    header {
+      background: #6B3E26;
+      color: white;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: #D35400;
+      outline: none;
+    }
     .hero {
       background: #fff;
       padding: 6em 2em;
@@ -28,7 +55,7 @@
       color: #6B3E26; /* Deep brown */
     }
     .hero button {
-      background: #D35400; /* Vibrant orange */
+      background: #D35400;
       color: #fff;
       border: none;
       padding: 0.75em 2em;
@@ -39,22 +66,85 @@
       margin-top: 1em;
       transition: background 0.3s ease;
     }
-    .hero button:hover {
+    .hero button:hover,
+    .hero button:focus {
       background: #a63e00;
+      outline: none;
     }
-    section { padding: 4em 2em; max-width: 1000px; margin: auto; }
-    .products, .benefits, .ingredients, .testimonials, .articles { display: grid; gap: 2em; }
-    .products img, .ingredients img { width: 100%; border-radius: 8px; }
-    .product, .benefit, .ingredient, .testimonial, .article { background: #f4f4f4; padding: 1em; border-radius: 8px; }
-    .product button, .article button { background: #6B3E26; color: white; padding: 0.5em 1em; border: none; border-radius: 5px; cursor: pointer; margin-top: 0.5em; }
-    .article-content { display: none; margin-top: 1em; color: #444; font-size: 0.95em; }
-    footer { background: #333; color: white; text-align: center; padding: 2em; }
+    section {
+      padding: 4em 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 1em;
+      color: #6B3E26;
+      font-weight: 800;
+      font-size: 2em;
+    }
+    .products, .benefits, .ingredients, .testimonials, .articles {
+      display: grid;
+      gap: 2em;
+    }
+    .products {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .product, .benefit, .ingredient, .testimonial, .article {
+      background: #f4f4f4;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+    }
+    .products img, .ingredients img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 0.75em;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+    }
+    .product h3, .article h3 {
+      margin: 0.25em 0;
+      color: #D35400;
+    }
+    .product p, .benefit p, .ingredient p, .testimonial p, .article p {
+      margin: 0.5em 0;
+    }
+    .product button, .article button {
+      background: #6B3E26;
+      color: white;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 0.5em;
+      transition: background 0.3s ease;
+    }
+    .product button:hover,
+    .article button:hover {
+      background: #53311a;
+    }
+    .article-content {
+      display: none;
+      margin-top: 1em;
+      color: #444;
+      font-size: 0.95em;
+      line-height: 1.4;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2em;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
   <header>
     <h2>Protiebytes</h2>
-    <nav>
+    <nav aria-label="Primary navigation">
       <a href="#products">Our Bars</a>
       <a href="#benefits">Benefits</a>
       <a href="#ingredients">Ingredients</a>
@@ -63,96 +153,94 @@
     </nav>
   </header>
 
-  <div class="hero">
-    <h1>Fuel Your Day with Protiebytes</h1>
-    <p>Delicious. Nutritious. Power-packed protein bars.</p>
-    <button>Shop Now</button>
-  </div>
+  <main>
+    <section class="hero" aria-label="Hero section">
+      <h1>Fuel Your Day with Protiebytes</h1>
+      <p>Delicious. Nutritious. Power-packed protein bars.</p>
+      <button type="button" onclick="alert('Shop Now clicked!')">Shop Now</button>
+    </section>
 
-  <section id="products" class="products">
-    <h2>Our Bars</h2>
-    <div class="product">
-      <img Fuel Your Day with Protiebytes  
-Delicious. Nutritious. Power-packed protein bars.
- alt="Chocolate Protein Bar">
-      <h3>Chocolate Crunch</h3>
-      <p>Rich cocoa, peanuts, and oats — the ultimate post-workout bar.</p>
-      <button>Buy Now</button>
-    </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1584270354949-1a1d893fb039" alt="Nutty Delight">
-      <h3>Nutty Delight</h3>
-      <p>Almonds, cashews, dates — naturally sweet and packed with protein.</p>
-      <button>Buy Now</button>
-    </div>
-  </section>
+    <section id="products" class="products" aria-label="Our Bars">
+      <h2>Our Bars</h2>
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1606755962773-247a05a0c94c" alt="Chocolate Protein Bar with cocoa, peanuts and oats" />
+        <h3>Chocolate Crunch</h3>
+        <p>Rich cocoa, peanuts, and oats — the ultimate post-workout bar.</p>
+        <button type="button" onclick="alert('Buy Chocolate Crunch')">Buy Now</button>
+      </article>
+      <article class="product">
+        <img src="https://images.unsplash.com/photo-1584270354949-1a1d893fb039" alt="Protein Bar with almonds, cashews and dates" />
+        <h3>Nutty Delight</h3>
+        <p>Almonds, cashews, dates — naturally sweet and packed with protein.</p>
+        <button type="button" onclick="alert('Buy Nutty Delight')">Buy Now</button>
+      </article>
+    </section>
 
-  <section id="benefits" class="benefits">
-    <h2>Why Protiebytes?</h2>
-    <div class="benefit">
-      <h4>High Protein</h4>
-      <p>Each bar gives you 10g+ of natural protein from nuts and seeds.</p>
-    </div>
-    <div class="benefit">
-      <h4>No Added Sugar</h4>
-      <p>Sweetened with dates — 100% guilt-free indulgence.</p>
-    </div>
-    <div class="benefit">
-      <h4>On-the-Go Energy</h4>
-      <p>Perfect snack between work, workouts, and life.</p>
-    </div>
-  </section>
+    <section id="benefits" class="benefits" aria-label="Benefits of Protiebytes">
+      <h2>Why Protiebytes?</h2>
+      <article class="benefit">
+        <h4>High Protein</h4>
+        <p>Each bar gives you 10g+ of natural protein from nuts and seeds.</p>
+      </article>
+      <article class="benefit">
+        <h4>No Added Sugar</h4>
+        <p>Sweetened with dates — 100% guilt-free indulgence.</p>
+      </article>
+      <article class="benefit">
+        <h4>On-the-Go Energy</h4>
+        <p>Perfect snack between work, workouts, and life.</p>
+      </article>
+    </section>
 
-  <section id="ingredients" class="ingredients">
-    <h2>Our Clean Ingredients</h2>
-    <div class="ingredient">
-      <img src="https://images.unsplash.com/photo-1611078489935-0cb9640f4e53" alt="Peanuts">
-      <p>Roasted peanuts</p>
-    </div>
-    <div class="ingredient">
-      <img src="https://images.unsplash.com/photo-1606755962773-247a05a0c94c" alt="Dates">
-      <p>Natural dates</p>
-    </div>
-    <div class="ingredient">
-      <img src="https://images.unsplash.com/photo-1585241645927-2d7fb881d27e" alt="Chia seeds">
-      <p>Chia seeds</p>
-    </div>
-  </section>
+    <section id="ingredients" class="ingredients" aria-label="Ingredients used">
+      <h2>Our Clean Ingredients</h2>
+      <article class="ingredient">
+        <img src="https://images.unsplash.com/photo-1611078489935-0cb9640f4e53" alt="Roasted peanuts" />
+        <p>Roasted peanuts</p>
+      </article>
+      <article class="ingredient">
+        <img src="https://images.unsplash.com/photo-1606755962773-247a05a0c94c" alt="Natural dates" />
+        <p>Natural dates</p>
+      </article>
+      <article class="ingredient">
+        <img src="https://images.unsplash.com/photo-1585241645927-2d7fb881d27e" alt="Chia seeds" />
+        <p>Chia seeds</p>
+      </article>
+    </section>
 
-  <section id="testimonials" class="testimonials">
-    <h2>What People Say</h2>
-    <div class="testimonial">
-      <p>“Tastes amazing and keeps me full during my morning workouts!” – Aarya, Mumbai</p>
-    </div>
-    <div class="testimonial">
-      <p>“Love the ingredients – clean, natural, and no sugar crash!” – Rahul, Pune</p>
-    </div>
-  </section>
+    <section id="testimonials" class="testimonials" aria-label="Customer testimonials">
+      <h2>What People Say</h2>
+      <blockquote class="testimonial">
+        <p>“Tastes amazing and keeps me full during my morning workouts!” – Aarya, Mumbai</p>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>“Love the ingredients – clean, natural, and no sugar crash!” – Rahul, Pune</p>
+      </blockquote>
+    </section>
 
-  <section id="articles" class="articles">
-    <h2>Health & Nutrition Articles</h2>
-    <div class="article">
-      <h3>Top 5 Benefits of Protein in Your Diet</h3>
-      <p>Protein helps build muscles, supports recovery, boosts immunity, and keeps you full longer.</p>
-      <button onclick="toggleArticle(this)">Read More</button>
-      <div class="article-content">Adding protein bars to your daily routine not only supports your physical goals but also helps stabilize blood sugar and reduces unnecessary cravings. Learn how smart snacking keeps you energized.</div>
-    </div>
-    <div class="article">
-      <h3>Natural vs Artificial Snacks – What’s Better?</h3>
-      <p>We break down the differences between natural protein snacks and typical processed energy bars.</p>
-      <button onclick="toggleArticle(this)">Read More</button>
-      <div class="article-content">Natural snacks like Protiebytes are free from preservatives and synthetic sweeteners, unlike artificial bars loaded with chemicals. Know what goes into your body and make healthier choices today.</div>
-    </div>
-    <div class="article">
-      <h3>How to Eat Healthy During Busy Days</h3>
-      <p>Healthy eating doesn’t need to be hard. Here are 6 smart habits for busy people.</p>
-      <button onclick="toggleArticle(this)">Read More</button>
-      <div class="article-content">Keep a Protiebytes bar in your bag, hydrate regularly, eat smaller portions throughout the day, and prepare weekly snacks. Healthy habits add up even on your busiest days.</div>
-    </div>
-  </section>
+    <section id="articles" class="articles" aria-label="Health & Nutrition Articles">
+      <h2>Health & Nutrition Articles</h2>
+      <article class="article">
+        <h3>Top 5 Benefits of Protein in Your Diet</h3>
+        <p>Protein helps build muscles, supports recovery, boosts immunity, and keeps you full longer.</p>
+        <button type="button" onclick="toggleArticle(this)">Read More</button>
+        <div class="article-content">
+          Adding protein bars to your daily routine not only supports your physical goals but also helps stabilize blood sugar and reduces unnecessary cravings. Learn how smart snacking keeps you energized.
+        </div>
+      </article>
+      <article class="article">
+        <h3>Why Choose Natural Ingredients?</h3>
+        <p>Processed sugars and artificial additives can harm your health. Choose bars with wholesome, natural ingredients.</p>
+        <button type="button" onclick="toggleArticle(this)">Read More</button>
+        <div class="article-content">
+          Natural ingredients provide essential vitamins, minerals, and antioxidants. This helps with digestion, skin health, and overall well-being. Protiebytes bars are made with your health in mind.
+        </div>
+      </article>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Protiebytes | Eat Clean. Stay Lean.</p>
+    <p>© 2025 Protiebytes. All rights reserved.</p>
   </footer>
 
   <script>
