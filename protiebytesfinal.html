@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Protiebytes | Healthy Protein Bars</title>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+    header { background: #6B3E26; color: white; padding: 1em 2em; display: flex; justify-content: space-between; align-items: center; }
+    nav a { color: white; margin: 0 1em; text-decoration: none; font-weight: bold; }
+    .hero {
+      background: #fff;
+      padding: 6em 2em;
+      color: #6B3E26;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin: 0;
+      font-weight: 900;
+      color: #D35400; /* Vibrant orange */
+      text-shadow: 1px 1px 2px #a64b00;
+    }
+    .hero p {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin-top: 0.5em;
+      color: #6B3E26; /* Deep brown */
+    }
+    .hero button {
+      background: #D35400; /* Vibrant orange */
+      color: #fff;
+      border: none;
+      padding: 0.75em 2em;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1em;
+      transition: background 0.3s ease;
+    }
+    .hero button:hover {
+      background: #a63e00;
+    }
+    section { padding: 4em 2em; max-width: 1000px; margin: auto; }
+    .products, .benefits, .ingredients, .testimonials, .articles { display: grid; gap: 2em; }
+    .products img, .ingredients img { width: 100%; border-radius: 8px; }
+    .product, .benefit, .ingredient, .testimonial, .article { background: #f4f4f4; padding: 1em; border-radius: 8px; }
+    .product button, .article button { background: #6B3E26; color: white; padding: 0.5em 1em; border: none; border-radius: 5px; cursor: pointer; margin-top: 0.5em; }
+    .article-content { display: none; margin-top: 1em; color: #444; font-size: 0.95em; }
+    footer { background: #333; color: white; text-align: center; padding: 2em; }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Protiebytes</h2>
+    <nav>
+      <a href="#products">Our Bars</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#ingredients">Ingredients</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#articles">Articles</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Fuel Your Day with Protiebytes</h1>
+    <p>Delicious. Nutritious. Power-packed protein bars.</p>
+    <button>Shop Now</button>
+  </div>
+
+  <section id="products" class="products">
+    <h2>Our Bars</h2>
+    <div class="product">
+      <img Fuel Your Day with Protiebytes  
+Delicious. Nutritious. Power-packed protein bars.
+ alt="Chocolate Protein Bar">
+      <h3>Chocolate Crunch</h3>
+      <p>Rich cocoa, peanuts, and oats — the ultimate post-workout bar.</p>
+      <button>Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1584270354949-1a1d893fb039" alt="Nutty Delight">
+      <h3>Nutty Delight</h3>
+      <p>Almonds, cashews, dates — naturally sweet and packed with protein.</p>
+      <button>Buy Now</button>
+    </div>
+  </section>
+
+  <section id="benefits" class="benefits">
+    <h2>Why Protiebytes?</h2>
+    <div class="benefit">
+      <h4>High Protein</h4>
+      <p>Each bar gives you 10g+ of natural protein from nuts and seeds.</p>
+    </div>
+    <div class="benefit">
+      <h4>No Added Sugar</h4>
+      <p>Sweetened with dates — 100% guilt-free indulgence.</p>
+    </div>
+    <div class="benefit">
+      <h4>On-the-Go Energy</h4>
+      <p>Perfect snack between work, workouts, and life.</p>
+    </div>
+  </section>
+
+  <section id="ingredients" class="ingredients">
+    <h2>Our Clean Ingredients</h2>
+    <div class="ingredient">
+      <img src="https://images.unsplash.com/photo-1611078489935-0cb9640f4e53" alt="Peanuts">
+      <p>Roasted peanuts</p>
+    </div>
+    <div class="ingredient">
+      <img src="https://images.unsplash.com/photo-1606755962773-247a05a0c94c" alt="Dates">
+      <p>Natural dates</p>
+    </div>
+    <div class="ingredient">
+      <img src="https://images.unsplash.com/photo-1585241645927-2d7fb881d27e" alt="Chia seeds">
+      <p>Chia seeds</p>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <h2>What People Say</h2>
+    <div class="testimonial">
+      <p>“Tastes amazing and keeps me full during my morning workouts!” – Aarya, Mumbai</p>
+    </div>
+    <div class="testimonial">
+      <p>“Love the ingredients – clean, natural, and no sugar crash!” – Rahul, Pune</p>
+    </div>
+  </section>
+
+  <section id="articles" class="articles">
+    <h2>Health & Nutrition Articles</h2>
+    <div class="article">
+      <h3>Top 5 Benefits of Protein in Your Diet</h3>
+      <p>Protein helps build muscles, supports recovery, boosts immunity, and keeps you full longer.</p>
+      <button onclick="toggleArticle(this)">Read More</button>
+      <div class="article-content">Adding protein bars to your daily routine not only supports your physical goals but also helps stabilize blood sugar and reduces unnecessary cravings. Learn how smart snacking keeps you energized.</div>
+    </div>
+    <div class="article">
+      <h3>Natural vs Artificial Snacks – What’s Better?</h3>
+      <p>We break down the differences between natural protein snacks and typical processed energy bars.</p>
+      <button onclick="toggleArticle(this)">Read More</button>
+      <div class="article-content">Natural snacks like Protiebytes are free from preservatives and synthetic sweeteners, unlike artificial bars loaded with chemicals. Know what goes into your body and make healthier choices today.</div>
+    </div>
+    <div class="article">
+      <h3>How to Eat Healthy During Busy Days</h3>
+      <p>Healthy eating doesn’t need to be hard. Here are 6 smart habits for busy people.</p>
+      <button onclick="toggleArticle(this)">Read More</button>
+      <div class="article-content">Keep a Protiebytes bar in your bag, hydrate regularly, eat smaller portions throughout the day, and prepare weekly snacks. Healthy habits add up even on your busiest days.</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Protiebytes | Eat Clean. Stay Lean.</p>
+  </footer>
+
+  <script>
+    function toggleArticle(button) {
+      const content = button.nextElementSibling;
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+        button.textContent = 'Read More';
+      } else {
+        content.style.display = 'block';
+        button.textContent = 'Read Less';
+      }
+    }
+  </script>
+</body>
+</html>
